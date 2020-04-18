@@ -10,6 +10,13 @@ async def on_ready():
     print("bot online!")
 
 @client.command(pass_context=True)
+async def classlist(ctx):
+    classes = ""
+    for i in member.guild.roles:
+        classes += (i + "\n")
+    await ctx.send("COURSE CATALOG:\n```"+classes+"```")
+
+@client.command(pass_context=True)
 async def role(ctx, theRole):
     member = ctx.message.author
 
