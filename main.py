@@ -19,8 +19,8 @@ async def classlist(ctx):
     classes.sort()
     catalog = ""
     for i in range(len(classes)):
-        catalog += ("CSE" + str(i)
-        if i % 3 == 0 and i > 0:
+        catalog += ("CSE" + str(classes[i]))
+        if int(str(i)) % 3 == 0 and int(str(i)) > 0:
             catalog += "\n"
     await ctx.send("COURSE CATALOG:\n>>> "+catalog)
 
