@@ -22,6 +22,8 @@ async def classlist(ctx):
         catalog += ("CSE" + str(classes[i]))
         if int(str(i)) % 3 == 0 and int(str(i)) > 0:
             catalog += "\n"
+        else:
+            catalog += "\t"
     await ctx.send("COURSE CATALOG:\n>>> "+catalog)
 
 @client.command(pass_context=True)
