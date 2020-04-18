@@ -15,7 +15,7 @@ async def classlist(ctx):
     member = ctx.message.author
     for i in member.guild.roles:
         if str(i).isdigit():
-            classes.append(int(i))
+            classes.append(str(int(i)))
     classes.sort()
     catalog = ""
     for i in classes:
