@@ -11,11 +11,16 @@ async def on_ready():
 
 @client.command(pass_context=True)
 async def classlist(ctx):
-    classes = ""
+    classes = []
     member = ctx.message.author
     for i in member.guild.roles:
-        classes += (str(i) + "\n")
-    await ctx.send("COURSE CATALOG:\n```"+classes+"```")
+        if str(i).isdigit():
+            classes.append(int(i))
+    classes.sort()
+    catalog = ""
+    for i in classes:
+        catalog += ("CSE" + str(i) + "\n")
+    await ctx.send("COURSE CATALOG:\n>>>"+catalog)
 
 @client.command(pass_context=True)
 async def role(ctx, theRole):
