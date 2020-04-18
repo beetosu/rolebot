@@ -14,7 +14,7 @@ async def classlist(ctx):
     classes = ""
     member = ctx.message.author
     for i in member.guild.roles:
-        classes += (i + "\n")
+        classes += (str(i) + "\n")
     await ctx.send("COURSE CATALOG:\n```"+classes+"```")
 
 @client.command(pass_context=True)
