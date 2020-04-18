@@ -18,9 +18,11 @@ async def classlist(ctx):
             classes.append(int(str(i)))
     classes.sort()
     catalog = ""
-    for i in classes:
-        catalog += ("CSE" + str(i) + "\n")
-    await ctx.send("COURSE CATALOG:\n>>>"+catalog)
+    for i in range(len(classes)):
+        catalog += ("CSE" + str(i)
+        if i % 3 == 0 and i > 0:
+            catalog += "\n"
+    await ctx.send("COURSE CATALOG:\n>>> "+catalog)
 
 @client.command(pass_context=True)
 async def role(ctx, theRole):
