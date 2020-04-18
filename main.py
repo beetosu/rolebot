@@ -20,11 +20,11 @@ async def classlist(ctx):
     catalog = ""
     for i in range(len(classes)):
         catalog += ("CSE" + str(classes[i]))
-        if int(str(i)) % 3 == 0 and int(str(i)) > 0:
+        if (int(str(i))+1) % 3 == 0 and int(str(i)) > 0:
             catalog += "\n"
         else:
             catalog += "\t"
-    await ctx.send("COURSE CATALOG:\n>>> "+catalog)
+    await ctx.send("COURSE CATALOG:\n```"+catalog+"```")
 
 @client.command(pass_context=True)
 async def role(ctx, theRole):
